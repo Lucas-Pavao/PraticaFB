@@ -9,10 +9,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.BreakIterator;
 
+import lucaspavao.praticafb.model.User;
+
 public class SignUpActivity extends AppCompatActivity {
+    TextView edNome;
     TextView edPassword;
     TextView edEmail ;
     private FirebaseAuth fbAuth;
@@ -25,6 +30,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         edEmail = findViewById(R.id.edit_email);
         edPassword = findViewById(R.id.edit_password);
+        edNome = findViewById(R.id.edit_name);
 
         this.fbAuth = FirebaseAuth.getInstance();
         this.authListener = new FirebaseAuthListener(this);
@@ -43,7 +49,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     public void buttonSignUpClick(View view) {
 
-
+        String name = edNome.getText().toString();
         String email = edEmail.getText().toString();
         String password = edPassword.getText().toString();
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -53,7 +59,15 @@ public class SignUpActivity extends AppCompatActivity {
                             "SIGN UP ERROR!";
                     Toast.makeText(SignUpActivity.this, msg,
                             Toast.LENGTH_SHORT).show();
+                    if (task.isSuccessful()) {
+                        User tempUser = new User(name, email);
+                        DatabaseReference drUsers = FirebaseDatabase.
+                                getInstance().getReference("users");
+                        drUsers.child(mAuth.getCurrentUser().getUid()).
+                                setValue(tempUser);
+                    }
                 });
+
     }
 
 

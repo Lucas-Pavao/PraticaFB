@@ -4,17 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".HomeActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/text_welcome"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bem Vindo!"/>
+       />
+
+    <LinearLayout
+        android:id="@+id/chat_area"
+        android:layout_width="match_parent"
+        android:layout_height="561dp"
+        android:orientation="vertical"/>
+
+    <EditText
+        android:id="@+id/edit_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionSend"
+        android:hint="Message" />
+    <Button
+        android:id="@+id/button_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonSendMessageClick"
+        android:text="Enviar" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sair"
-        android:onClick="buttonSignOutClick"/>
+        android:onClick="buttonSignOutClick"
+        android:text="Sair" />
 
 </LinearLayout>
