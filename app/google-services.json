@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "525828613023",
+    "project_id": "praticafb-12410",
+    "storage_bucket": "praticafb-12410.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525828613023:android:2e7db5bf8a1886e71d13aa",
+        "android_client_info": {
+          "package_name": "lucaspavao.praticafb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "525828613023-r91rklikaspkul0eufntjgqrvg2h3rdu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgLZjHGTPDmU68USKBS9X1K8Xz7T4K6kA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "525828613023-r91rklikaspkul0eufntjgqrvg2h3rdu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
